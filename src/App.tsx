@@ -37,25 +37,34 @@ function VSCodeLayout() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const [openTabs, setOpenTabs] = useState<string[]>(
-    location.pathname === "/" ? [] : [location.pathname]
-  );
+  const [openTabs, setOpenTabs] = useState<string[]>(() => {
+    const saved = localStorage.getItem("openTabs");
+    if (saved) return JSON.parse(saved) as string[];
+    return location.pathname === "/" ? [] : [location.pathname];
+  });
+
   useEffect(() => {
     if (location.pathname !== "/" && !openTabs.includes(location.pathname)) {
-      setOpenTabs((tabs) => [...tabs, location.pathname]);
+      const newTabs = [...openTabs, location.pathname];
+      setOpenTabs(newTabs);
+      localStorage.setItem("openTabs", JSON.stringify(newTabs));
     }
   }, [location.pathname]);
 
   const handleCloseTab = (path: string) => {
-    const newTabs = openTabs.filter((p) => p !== path);
-    setOpenTabs(newTabs);
-    if (location.pathname === path) {
-      if (newTabs.length > 0) {
-        navigate(newTabs[newTabs.length - 1]);
-      } else {
-        navigate("/");
+    setOpenTabs((tabs) => {
+      const newTabs = tabs.filter((p) => p !== path);
+      localStorage.setItem("openTabs", JSON.stringify(newTabs));
+
+      if (location.pathname === path) {
+        if (newTabs.length > 0) {
+          navigate(newTabs[newTabs.length - 1]);
+        } else {
+          navigate("/");
+        }
       }
-    }
+      return newTabs;
+    });
   };
 
   const tabData = openTabs

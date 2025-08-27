@@ -1,10 +1,4 @@
-import {
-  ChevronLeft,
-  ChevronRight,
-  LayoutPanelLeft,
-  PanelBottom,
-  PanelRight,
-} from "lucide-react";
+import { LayoutPanelLeft, PanelBottom, PanelRight } from "lucide-react";
 import vscode from "../../assets/vscode.png";
 
 const menuItems = [
@@ -33,14 +27,6 @@ export function AppHeader() {
         ))}
       </nav>
       <div className="flex-1 flex justify-center items-center">
-        <div className="flex items-center gap-2 pr-4">
-          <button className="w-7 h-7 flex items-center justify-center rounded hover:bg-zinc-800">
-            <ChevronLeft size={16} className="text-zinc-400" />
-          </button>
-          <button className="w-7 h-7 flex items-center justify-center rounded hover:bg-zinc-800">
-            <ChevronRight size={16} className="text-zinc-400" />
-          </button>
-        </div>
         <div className="border border-zinc-700 bg-zinc-800 rounded-md px-[120px] py-[2px] flex gap-2 items-center">
           <span className="text-sm text-zinc-200 tracking-tight">
             Suhrob Kholmurodov
