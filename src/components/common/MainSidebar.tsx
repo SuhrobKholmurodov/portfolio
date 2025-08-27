@@ -7,7 +7,7 @@ const sidebarIcons = [
   { id: "github", icon: <Github size={24} />, label: "GitHub" },
 ];
 
-export function AppSidebar({
+export function MainSidebar({
   activeSection,
   setActiveSection,
 }: {

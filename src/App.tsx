@@ -3,8 +3,8 @@ import { FileExplorer } from "@/components/common/FileExplorer";
 import { FileTabs } from "@/components/common/FileTabs";
 import { PageContent } from "@/components/common/PageContent";
 import { StatusFooter } from "@/components/common/StatusFooter";
-import { AppSidebar } from "./components/common/AppsideBar";
 import { AppHeader } from "./components/common/AppHeader";
+import { MainSidebar } from "./components/common/MainSidebar";
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("explorer");
@@ -33,7 +33,7 @@ export default function App() {
     <div className="flex flex-col h-screen w-screen bg-background">
       <AppHeader />
       <div className="flex flex-1 min-h-0">
-        <AppSidebar
+        <MainSidebar
           activeSection={activeSection}
           setActiveSection={setActiveSection}
         />
