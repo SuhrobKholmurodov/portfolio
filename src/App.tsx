@@ -1,33 +1,73 @@
-import { useState } from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
+import { useState, useEffect } from "react";
+import { AppHeader } from "@/components/common/AppHeader";
+import { MainSidebar } from "@/components/common/MainSidebar";
 import { FileExplorer } from "@/components/common/FileExplorer";
 import { FileTabs } from "@/components/common/FileTabs";
-import { PageContent } from "@/components/common/PageContent";
 import { StatusFooter } from "@/components/common/StatusFooter";
-import { AppHeader } from "./components/common/AppHeader";
-import { MainSidebar } from "./components/common/MainSidebar";
 
-export default function App() {
+import Welcome from "@/pages/Welcome";
+import Home from "@/pages/Home";
+import Contacts from "@/pages/Contacts";
+import Projects from "@/pages/Projects";
+
+const filePages = [
+  { id: "home", label: "Home.tsx", path: "/home", component: Home },
+  {
+    id: "contacts",
+    label: "Contacts.tsx",
+    path: "/contacts",
+    component: Contacts,
+  },
+  {
+    id: "projects",
+    label: "Projects.tsx",
+    path: "/projects",
+    component: Projects,
+  },
+];
+
+function VSCodeLayout() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const [openTabs, setOpenTabs] = useState<string[]>(
+    location.pathname === "/" ? [] : [location.pathname]
+  );
+
+  useEffect(() => {
+    if (
+      location.pathname !== "/" &&
+      !openTabs.includes(location.pathname) &&
+      filePages.find((f) => f.path === location.pathname)
+    ) {
+      setOpenTabs((tabs) => [...tabs, location.pathname]);
+    }
+  }, [location.pathname, openTabs]);
+
+  const handleCloseTab = (path: string) => {
+    const newTabs = openTabs.filter((p) => p !== path);
+    setOpenTabs(newTabs);
+    if (location.pathname === path) {
+      if (newTabs.length > 0) {
+        navigate(newTabs[newTabs.length - 1]);
+      } else {
+        navigate("/");
+      }
+    }
+  };
+
+  const tabData = openTabs
+    .map((path) => filePages.find((f) => f.path === path))
+    .filter(Boolean) as (typeof filePages)[0][];
+
   const [activeSection, setActiveSection] = useState("explorer");
-  const [openFiles, setOpenFiles] = useState([
-    { id: "home", label: "home.js", path: "portfolio/src/pages/home.js" },
-  ]);
-  const [activeFileId, setActiveFileId] = useState(openFiles[0].id);
-
-  const handleOpenFile = (id: string, label: string, path: string) => {
-    if (!openFiles.find((f) => f.id === id)) {
-      setOpenFiles([...openFiles, { id, label, path }]);
-    }
-    setActiveFileId(id);
-  };
-
-  const handleCloseTab = (id: string) => {
-    const idx = openFiles.findIndex((f) => f.id === id);
-    const newFiles = openFiles.filter((f) => f.id !== id);
-    setOpenFiles(newFiles);
-    if (id === activeFileId) {
-      setActiveFileId(newFiles[idx === 0 ? 0 : idx - 1]?.id || "");
-    }
-  };
 
   return (
     <div className="flex flex-col h-screen w-screen bg-background">
@@ -38,10 +78,7 @@ export default function App() {
           setActiveSection={setActiveSection}
         />
         {activeSection === "explorer" ? (
-          <FileExplorer
-            onOpenFile={handleOpenFile}
-            activeFileId={activeFileId}
-          />
+          <FileExplorer />
         ) : activeSection === "search" ? (
           <aside className="w-60 bg-zinc-950 border-r text-sm pt-2 flex flex-col">
             <div className="font-bold text-xs px-3 mb-2 text-zinc-300 tracking-tight">
@@ -61,17 +98,30 @@ export default function App() {
         ) : null}
         <div className="flex-1 flex flex-col min-h-0 bg-background">
           <FileTabs
-            openFiles={openFiles}
-            activeFileId={activeFileId}
-            setActiveFileId={setActiveFileId}
+            tabs={tabData}
+            activePath={location.pathname}
+            setActivePath={navigate}
             onCloseTab={handleCloseTab}
           />
           <div className="flex-1 min-h-0 overflow-auto bg-background">
-            <PageContent id={activeFileId} />
+            <Routes>
+              <Route path="/" element={<Welcome />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/contacts" element={<Contacts />} />
+              <Route path="/projects" element={<Projects />} />
+            </Routes>
           </div>
         </div>
       </div>
       <StatusFooter />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <VSCodeLayout />
+    </BrowserRouter>
   );
 }

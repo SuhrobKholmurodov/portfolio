@@ -41,7 +41,7 @@ export function AppHeader() {
             <ChevronRight size={16} className="text-zinc-400" />
           </button>
         </div>
-        <div className="border border-zinc-700 bg-zinc-800 rounded-md px-20 py-[2px] flex gap-2 items-center">
+        <div className="border border-zinc-700 bg-zinc-800 rounded-md px-[120px] py-[2px] flex gap-2 items-center">
           <span className="text-sm text-zinc-200 tracking-tight">
             Suhrob Kholmurodov
           </span>

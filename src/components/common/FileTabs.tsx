@@ -9,30 +9,30 @@ type FileTab = {
 };
 
 export function FileTabs({
-  openFiles,
-  activeFileId,
-  setActiveFileId,
+  tabs,
+  activePath,
+  setActivePath,
   onCloseTab,
 }: {
-  openFiles: FileTab[];
-  activeFileId: string;
-  setActiveFileId: (id: string) => void;
+  tabs: FileTab[];
+  activePath: string;
+  setActivePath: (id: string) => void;
   onCloseTab: (id: string) => void;
 }) {
   return (
     <div className="bg-zinc-900 border-b flex items-center h-auto">
-      {openFiles.map((file) => (
+      {tabs.map((file) => (
         <div
           key={file.id}
           className={cn(
             "flex items-center px-3 py-[10px] gap-2 cursor-pointer text-xs border-r border-zinc-700 relative group",
-            activeFileId === file.id
+            activePath === file.path
               ? "bg-zinc-800 text-yellow-200"
               : "bg-zinc-900 text-zinc-400 hover:bg-zinc-800"
           )}
-          onClick={() => setActiveFileId(file.id)}
+          onClick={() => setActivePath(file.path)}
         >
-          {activeFileId === file.id && (
+          {activePath === file.path && (
             <div className="absolute top-0 left-0 right-0 h-0.5 bg-blue-500" />
           )}
 
@@ -44,11 +44,12 @@ export function FileTabs({
             variant="ghost"
             className={cn(
               "ml-2 h-[20px] w-[20px] rounded-sm hover:bg-zinc-700 hover:text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity",
-              activeFileId === file.id && "opacity-100 hover:bg-zinc-600 text-white hover:text-white"
+              activePath === file.path &&
+                "opacity-100 hover:bg-zinc-600 text-white hover:text-white"
             )}
             onClick={(e) => {
               e.stopPropagation();
-              onCloseTab(file.id);
+              onCloseTab(file.path);
             }}
           >
             <X size={10} />
