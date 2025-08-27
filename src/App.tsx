@@ -40,16 +40,11 @@ function VSCodeLayout() {
   const [openTabs, setOpenTabs] = useState<string[]>(
     location.pathname === "/" ? [] : [location.pathname]
   );
-
   useEffect(() => {
-    if (
-      location.pathname !== "/" &&
-      !openTabs.includes(location.pathname) &&
-      filePages.find((f) => f.path === location.pathname)
-    ) {
+    if (location.pathname !== "/" && !openTabs.includes(location.pathname)) {
       setOpenTabs((tabs) => [...tabs, location.pathname]);
     }
-  }, [location.pathname, openTabs]);
+  }, [location.pathname]);
 
   const handleCloseTab = (path: string) => {
     const newTabs = openTabs.filter((p) => p !== path);
