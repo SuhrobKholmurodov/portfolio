@@ -16,9 +16,11 @@ import Welcome from "@/pages/Welcome";
 import Home from "@/pages/Home";
 import Contacts from "@/pages/Contacts";
 import Projects from "@/pages/Projects";
+import About from "@/pages/About";
 
 const filePages = [
   { id: "home", label: "Home.tsx", path: "/home", component: Home },
+  { id: "about", label: "About.tsx", path: "/about", component: About },
   {
     id: "contacts",
     label: "Contacts.tsx",
@@ -113,6 +115,7 @@ function VSCodeLayout() {
               <Route path="/home" element={<Home />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/projects" element={<Projects />} />
+              <Route path="/about" element={<About />} />
             </Routes>
           </div>
         </div>

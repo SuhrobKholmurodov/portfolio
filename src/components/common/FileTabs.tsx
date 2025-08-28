@@ -21,14 +21,14 @@ export function FileTabs({
   onCloseTab: (id: string) => void;
 }) {
   return (
-    <div className="bg-zinc-900 border-b flex items-center h-auto">
+    <div className="bg-zinc-900 flex items-center h-auto">
       {tabs.map((file) => (
         <div
           key={file.id}
           className={cn(
-            "flex items-center px-4 py-[10px] gap-2 cursor-pointer text-xs border-r border-zinc-700 relative group",
+            "flex items-center px-3 py-[9px] gap-2 cursor-pointer text-xs border-r border-b border-zinc-700 relative group",
             activePath === file.path
-              ? "bg-zinc-800 text-white"
+              ? "bg-zinc-800 text-white  border-b border-b-zinc-800"
               : "bg-zinc-900 text-zinc-400 hover:bg-zinc-800"
           )}
           onClick={() => setActivePath(file.path)}
@@ -37,7 +37,7 @@ export function FileTabs({
             <div className="absolute top-0 left-0 right-0 h-0.5 bg-blue-500" />
           )}
           <img src={ReactIcon} alt="React" className="w-4 h-4" />
-          <span className="font-semibold">{file.label}</span>
+          <span>{file.label}</span>
           <span className="opacity-70">{file.path.split("/")[0]}</span>
 
           <Button

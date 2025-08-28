@@ -16,6 +16,12 @@ const treeData = [
         path: "/home",
       },
       {
+        label: "About.tsx",
+        id: "about",
+        icon: <img src={ReactIcon} alt="React" className="w-4 h-4" />,
+        path: "/about",
+      },
+      {
         label: "Contacts.tsx",
         id: "contacts",
         icon: <img src={ReactIcon} alt="React" className="w-4 h-4" />,
@@ -45,22 +51,22 @@ export function FileExplorer() {
       <div className="">
         <button
           type="button"
-          className="w-full flex items-center gap-1 px-2 py-1 font-semibold text-zinc-200 hover:bg-zinc-800 rounded select-none"
+          className="w-full flex items-center gap-1 px-2 py-[2px] font-semibold text-zinc-200 hover:bg-zinc-800 rounded select-none"
           onClick={() => setOpen((o) => !o)}
         >
           {open ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
-          <Folder size={16} />
+          <Folder className="text-[#f5d165] fill-[#f5d165]" size={16} />
           <span>Portfolio</span>
         </button>
         {open && (
-          <div className="ml-4">
+          <div className="">
             {treeData[0].children.map((file: any) => (
               <button
                 key={file.id}
                 type="button"
-                className={`w-full flex items-center gap-2 px-2 py-1 rounded text-zinc-300 hover:bg-zinc-800 select-none ${
+                className={`w-full pl-[34px] flex items-center gap-2 py-[2px] text-zinc-300 hover:bg-zinc-800 select-none ${
                   location.pathname === file.path
-                    ? "bg-zinc-800 text-white"
+                    ? "bg-zinc-700 hover:bg-zinc-700 text-white"
                     : "text-zinc-400"
                 }`}
                 onClick={() => navigate(file.path)}
