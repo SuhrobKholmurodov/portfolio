@@ -38,7 +38,7 @@ export function MainSidebar({
             {activeSection === id && (
               <span className="absolute left-0 top-0 h-full w-[2px] bg-blue-500" />
             )}
-            <span className="z-10">{icon}</span>
+            <span className="z-10 sm:text-lg">{icon}</span>
           </button>
         ))}
       </div>
@@ -50,7 +50,7 @@ export function MainSidebar({
             aria-label={label}
             className="mb-2 w-[45px] h-[50px] flex items-center justify-center rounded text-zinc-500 cursor-default relative"
           >
-            <span className="z-10">{icon}</span>
+            <span className="z-10 sm:text-lg">{icon}</span>
           </div>
         ))}
       </div>

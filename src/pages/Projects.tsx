@@ -9,7 +9,6 @@ import {
 import { Link } from "react-router-dom";
 import { Box, Folder, Code, Globe, ExternalLink } from "lucide-react";
 import { useEffect, useState } from "react";
-import ReactIcon from "../assets/react.svg";
 
 export default function Projects() {
   const projects = [
@@ -73,22 +72,6 @@ export default function Projects() {
               </BreadcrumbLink>
               <BreadcrumbSeparator>{">"}</BreadcrumbSeparator>
             </BreadcrumbItem>
-
-            <BreadcrumbItem className="flex items-center space-x-1 group">
-              <img
-                src={ReactIcon}
-                alt="React icon"
-                className="w-4 h-4 transition-transform duration-300 group-hover:rotate-12"
-              />
-              <BreadcrumbLink
-                className="hover:text-white hover:cursor-auto transition-all duration-300"
-                asChild
-              >
-                <Link to={"/projects"}>Projects.tsx</Link>
-              </BreadcrumbLink>
-              <BreadcrumbSeparator>{">"}</BreadcrumbSeparator>
-            </BreadcrumbItem>
-
             <BreadcrumbItem className="flex items-center space-x-1 group">
               <Box className="w-4 h-4 text-violet-600 transition-transform duration-300 group-hover:rotate-12" />
               <BreadcrumbPage className="text-zinc-300 transition-all duration-300">
@@ -107,7 +90,7 @@ export default function Projects() {
             </h1>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-1 gap-6">
             {projects.map((project, index) => (
               <div
                 key={project.name}

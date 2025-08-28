@@ -44,7 +44,7 @@ export function FileExplorer() {
   const [open, setOpen] = useState(true);
 
   return (
-    <aside className="w-60 bg-zinc-950 border-r border-zinc-800 overflow-auto text-sm pt-2">
+    <aside className="w-60 sm:w-48 bg-zinc-950 border-r border-zinc-800 overflow-auto text-sm pt-2">
       <div className="font-bold text-xs px-3 mb-2 text-zinc-300 tracking-tight">
         EXPLORER
       </div>
@@ -56,7 +56,7 @@ export function FileExplorer() {
         >
           {open ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
           <Folder className="text-[#f5d165] fill-[#f5d165]" size={16} />
-          <span>Portfolio</span>
+          <span className="text-sm sm:text-xs">Portfolio</span>
         </button>
         {open && (
           <div className="">
@@ -72,7 +72,7 @@ export function FileExplorer() {
                 onClick={() => navigate(file.path)}
               >
                 {file.icon}
-                <span>{file.label}</span>
+                <span className="text-sm sm:text-xs">{file.label}</span>
               </button>
             ))}
           </div>

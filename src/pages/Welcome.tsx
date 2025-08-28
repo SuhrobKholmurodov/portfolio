@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 export default function Welcome() {
   return (
-    <div className="h-full flex flex-col bg-zinc-950 items-center justify-center">
-      <div className="text-center mb-4">
+    <div className="h-full flex flex-col px-4 bg-zinc-950 items-center justify-center">
+      <div className="text-center mb-4 sm:mt-10">
         <div className="flex items-center justify-center gap-3 mb-4">
           <div className="w-3 h-3 bg-red-500 rounded-full"></div>
           <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
@@ -19,7 +19,7 @@ export default function Welcome() {
           Frontend Developer & UI Enthusiast
         </div>
       </div>
-      <div className="w-full max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-4 mb-40">
+      <div className="w-full max-w-3xl grid grid-cols-2 sm:grid-cols-1 gap-4 mb-40">
         <Link
           to="/home"
           className="flex items-center gap-4 bg-zinc-900/80 hover:bg-zinc-800/60 border border-zinc-800 hover:border-yellow-500/30 px-5 py-4 rounded-xl transition-all duration-300 group hover:scale-[1.02] backdrop-blur-sm"

@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Link } from "react-router-dom";
 import { Mail, Github, Phone, Instagram, Code, Box } from "lucide-react";
-import ReactIcon from "../assets/react.svg";
 
 export default function Contact() {
   const Contact = [
@@ -50,18 +49,6 @@ export default function Contact() {
               </BreadcrumbLink>
               <BreadcrumbSeparator>{">"}</BreadcrumbSeparator>
             </BreadcrumbItem>
-
-            <BreadcrumbItem className="flex items-center space-x-1">
-              <img src={ReactIcon} alt="React icon" className="w-4 h-4" />
-              <BreadcrumbLink
-                className="hover:text-white hover:cursor-auto"
-                asChild
-              >
-                <Link to={"/contact"}>Contact.tsx</Link>
-              </BreadcrumbLink>
-              <BreadcrumbSeparator>{">"}</BreadcrumbSeparator>
-            </BreadcrumbItem>
-
             <BreadcrumbItem className="flex items-center space-x-1">
               <Box className="w-4 h-4 text-violet-600" />
               <BreadcrumbPage className="text-zinc-300">
@@ -71,9 +58,9 @@ export default function Contact() {
           </BreadcrumbList>
         </Breadcrumb>
       </nav>
-      <main className="flex-grow overflow-auto bg-gradient-to-br from-zinc-900 via-zinc-950 to-black text-zinc-100 p-6 min-h-0">
+      <main className="flex-grow overflow-auto bg-gradient-to-br from-zinc-900 via-zinc-950 to-black text-zinc-100 p-6 sm:p-4 min-h-0">
         <div className="max-w-[1080px] mx-auto">
-          <div className="bg-gradient-to-r from-blue-500/10 via-cyan-500/10 to-zinc-800/10 border border-zinc-700/50 rounded-3xl p-8 mb-10 backdrop-blur-sm">
+          <div className="bg-gradient-to-r from-blue-500/10 via-cyan-500/10 to-zinc-800/10 border border-zinc-700/50 rounded-3xl p-8 sm:p-4 mb-10 backdrop-blur-sm">
             <h1 className="text-3xl font-bold text-cyan-400 mb-4">
               Contact me
             </h1>
@@ -82,7 +69,7 @@ export default function Contact() {
               me for collaborations, questions, or just to say hi!
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-1 gap-6">
               {Contact.map((contact) => (
                 <div
                   key={contact.name}

@@ -7,7 +7,6 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Link } from "react-router-dom";
-import ReactIcon from "../assets/react.svg";
 import {
   User,
   Code,
@@ -58,18 +57,6 @@ export default function About() {
               </BreadcrumbLink>
               <BreadcrumbSeparator>{">"}</BreadcrumbSeparator>
             </BreadcrumbItem>
-
-            <BreadcrumbItem className="flex items-center space-x-1">
-              <img src={ReactIcon} alt="React icon" className="w-4 h-4" />
-              <BreadcrumbLink
-                className="hover:text-white hover:cursor-auto"
-                asChild
-              >
-                <Link to={"/about"}>About.tsx</Link>
-              </BreadcrumbLink>
-              <BreadcrumbSeparator>{">"}</BreadcrumbSeparator>
-            </BreadcrumbItem>
-
             <BreadcrumbItem className="flex items-center space-x-1">
               <Box className="w-4 h-4 text-violet-600" />
               <BreadcrumbPage className="text-zinc-300">About</BreadcrumbPage>
@@ -78,22 +65,22 @@ export default function About() {
         </Breadcrumb>
       </nav>
 
-      <main className="flex-grow overflow-auto bg-gradient-to-br from-zinc-900 via-zinc-950 to-black text-zinc-100 p-6 min-h-0">
+      <main className="flex-grow overflow-auto bg-gradient-to-br from-zinc-900 via-zinc-950 to-black text-zinc-100 p-4 sm:p-6 min-h-0">
         <div className="max-w-[1080px] mx-auto">
-          <div className="bg-gradient-to-r from-blue-900/20 via-zinc-800/20 to-black/20 border border-zinc-700/50 rounded-3xl p-8 mb-10 backdrop-blur-sm">
-            <div className="flex items-start gap-4 mb-6">
+          <div className="bg-gradient-to-r from-blue-900/20 via-zinc-800/20 to-black/20 border border-zinc-700/50 rounded-3xl p-6 sm:p-4 mb-6 sm:mb-10 backdrop-blur-sm">
+            <div className="flex flex-col sm:flex-row items-start gap-4 mb-6">
               <User className="w-8 h-8 text-cyan-400 flex-shrink-0 mt-1" />
               <div className="text-left">
-                <h3 className="text-2xl font-semibold text-zinc-200 mb-4">
+                <h3 className="text-xl sm:text-xl font-semibold text-zinc-200 mb-4">
                   About Me
                 </h3>
-                <p className="text-zinc-300 leading-relaxed text-lg mb-4">
+                <p className="text-zinc-300 leading-relaxed text-base sm:text-lg mb-4">
                   Hey! I'm a frontend developer from Dushanbe, Tajikistan. I
                   specialize in JavaScript/TypeScript and the React ecosystem,
                   creating modern, responsive web applications with clean UI/UX
                   design.
                 </p>
-                <p className="text-zinc-300 leading-relaxed text-lg">
+                <p className="text-zinc-300 leading-relaxed text-base sm:text-lg">
                   I'm focused on frontend development with React, but I also
                   have experience working with backend technologies like Node.js
                   and databases for my personal projects.
@@ -101,36 +88,44 @@ export default function About() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-              <div className="flex items-center gap-3 bg-zinc-800/40 p-4 rounded-xl">
+            <div className="grid grid-cols-3 sm:grid-cols-1 gap-3 sm:gap-4 mt-6 sm:mt-8">
+              <div className="flex items-center gap-3 bg-zinc-800/40 p-3 sm:p-4 rounded-xl">
                 <MapPin className="w-5 h-5 text-cyan-400" />
                 <div>
-                  <p className="text-zinc-400 text-sm">Location</p>
-                  <p className="text-zinc-200">Dushanbe, Tajikistan</p>
+                  <p className="text-zinc-400 text-xs sm:text-sm">Location</p>
+                  <p className="text-zinc-200 text-sm sm:text-base">
+                    Dushanbe, Tajikistan
+                  </p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 bg-zinc-800/40 p-4 rounded-xl">
+              <div className="flex items-center gap-3 bg-zinc-800/40 p-3 sm:p-4 rounded-xl">
                 <Briefcase className="w-5 h-5 text-cyan-400" />
                 <div>
-                  <p className="text-zinc-400 text-sm">Current Role</p>
-                  <p className="text-zinc-200">Frontend Developer</p>
+                  <p className="text-zinc-400 text-xs sm:text-sm">
+                    Current Role
+                  </p>
+                  <p className="text-zinc-200 text-sm sm:text-base">
+                    Frontend Developer
+                  </p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 bg-zinc-800/40 p-4 rounded-xl">
+              <div className="flex items-center gap-3 bg-zinc-800/40 p-3 sm:p-4 rounded-xl">
                 <Calendar className="w-5 h-5 text-cyan-400" />
                 <div>
-                  <p className="text-zinc-400 text-sm">Experience</p>
-                  <p className="text-zinc-200">Almost 2 years</p>
+                  <p className="text-zinc-400 text-xs sm:text-sm">Experience</p>
+                  <p className="text-zinc-200 text-sm sm:text-base">
+                    Almost 2 years
+                  </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-800/20 via-zinc-800/20 to-black/20 border border-zinc-700/50 rounded-3xl p-8 mb-10 backdrop-blur-sm">
-            <h3 className="text-2xl font-semibold text-zinc-200 mb-6 flex items-center gap-2">
-              <Briefcase className="w-6 h-6 text-cyan-400" />
+          <div className="bg-gradient-to-r from-blue-800/20 via-zinc-800/20 to-black/20 border border-zinc-700/50 rounded-3xl p-6 sm:p-4 mb-6 sm:mb-10 backdrop-blur-sm">
+            <h3 className="text-xl sm:text-xl font-semibold text-zinc-200 mb-6 flex items-center gap-2">
+              <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400" />
               Experience
             </h3>
 
@@ -141,24 +136,26 @@ export default function About() {
                   <div className="w-0.5 h-full bg-cyan-400/30 mt-1"></div>
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-xl font-semibold text-zinc-200">
+                  <h4 className="text-lg sm:text-xl font-semibold text-zinc-200">
                     Frontend Developer
                   </h4>
-                  <p className="text-cyan-400 mb-2">Local Company</p>
-                  <p className="text-zinc-300">
+                  <p className="text-cyan-400 mb-2 text-sm sm:text-base">
+                    Local Company
+                  </p>
+                  <p className="text-zinc-300 text-sm sm:text-base">
                     Currently working at a local company where I develop and
                     maintain responsive web applications using modern frontend
                     technologies. Focused on creating intuitive user interfaces
                     and seamless user experiences.
                   </p>
                   <div className="flex flex-wrap gap-2 mt-3">
-                    <span className="bg-zinc-700/50 px-3 py-1 rounded-md text-sm text-cyan-300">
+                    <span className="bg-zinc-700/50 px-2 py-1 rounded-md text-xs sm:text-sm text-cyan-300">
                       React
                     </span>
-                    <span className="bg-zinc-700/50 px-3 py-1 rounded-md text-sm text-blue-300">
+                    <span className="bg-zinc-700/50 px-2 py-1 rounded-md text-xs sm:text-sm text-blue-300">
                       TypeScript
                     </span>
-                    <span className="bg-zinc-700/50 px-3 py-1 rounded-md text-sm text-cyan-300">
+                    <span className="bg-zinc-700/50 px-2 py-1 rounded-md text-xs sm:text-sm text-cyan-300">
                       Tailwind CSS
                     </span>
                   </div>
@@ -167,13 +164,13 @@ export default function About() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-900/20 via-zinc-800/20 to-black/20 border border-zinc-700/50 rounded-3xl p-8 mb-10 backdrop-blur-sm">
-            <h3 className="text-2xl font-semibold text-zinc-200 mb-6 flex items-center gap-2">
-              <Code className="w-6 h-6 text-cyan-400" />
+          <div className="bg-gradient-to-r from-blue-900/20 via-zinc-800/20 to-black/20 border border-zinc-700/50 rounded-3xl p-6 sm:p-4 mb-6 sm:mb-10 backdrop-blur-sm">
+            <h3 className="text-xl sm:text-xl font-semibold text-zinc-200 mb-6 flex items-center gap-2">
+              <Code className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400" />
               Core Technologies
             </h3>
 
-            <div className="flex justify-center gap-8 mb-8">
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-8 mb-6 sm:mb-8">
               {[
                 {
                   src: "js-icon.svg",
@@ -205,27 +202,29 @@ export default function About() {
                   className="flex flex-col items-center group"
                 >
                   <div
-                    className={`w-16 h-16 ${tech.bg} rounded-xl flex items-center justify-center mb-2 group-hover:scale-110 transition-transform`}
+                    className={`w-12 h-12 sm:w-14 sm:h-14 ${tech.bg} rounded-xl flex items-center justify-center mb-2 group-hover:scale-110 transition-transform`}
                   >
                     <img
                       src={`https://techstack-generator.vercel.app/${tech.src}`}
                       alt={tech.alt}
-                      className="w-10 h-10"
+                      className="w-8 h-8 sm:w-10 sm:h-10"
                     />
                   </div>
-                  <span className="text-zinc-300 text-sm">{tech.label}</span>
+                  <span className="text-zinc-300 text-xs sm:text-sm">
+                    {tech.label}
+                  </span>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-800/20 via-zinc-800/20 to-black/20 border border-zinc-700/50 rounded-3xl p-8 mb-10 backdrop-blur-sm">
-            <h3 className="text-2xl font-semibold text-zinc-200 mb-6 flex items-center gap-2">
-              <Palette className="w-6 h-6 text-cyan-400" />
+          <div className="bg-gradient-to-r from-blue-800/20 via-zinc-800/20 to-black/20 border border-zinc-700/50 rounded-3xl p-6 sm:p-4 mb-6 sm:mb-10 backdrop-blur-sm">
+            <h3 className="text-xl sm:text-xl font-semibold text-zinc-200 mb-6 flex items-center gap-2">
+              <Palette className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400" />
               Frontend Technologies & UI Libraries
             </h3>
 
-            <div className="flex flex-wrap justify-center gap-3 mb-4">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-4">
               {[
                 { name: "HTML", color: "text-blue-400" },
                 { name: "CSS", color: "text-blue-300" },
@@ -235,18 +234,22 @@ export default function About() {
               ].map((tech) => (
                 <div
                   key={tech.name}
-                  className="bg-zinc-700/40 px-4 py-2 rounded-lg flex items-center gap-2"
+                  className="bg-zinc-700/40 px-3 py-1 sm:px-4 sm:py-2 rounded-lg flex items-center gap-2"
                 >
-                  <span className={`${tech.color} font-bold`}>{tech.name}</span>
+                  <span
+                    className={`${tech.color} font-bold text-xs sm:text-sm`}
+                  >
+                    {tech.name}
+                  </span>
                 </div>
               ))}
             </div>
 
-            <div className="mt-6">
-              <h4 className="text-lg font-semibold text-zinc-300 mb-4 text-center">
+            <div className="mt-4 sm:mt-6">
+              <h4 className="text-base sm:text-lg font-semibold text-zinc-300 mb-3 sm:mb-4 text-center">
                 UI Libraries & Component Frameworks
               </h4>
-              <div className="flex flex-wrap justify-center gap-3">
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
                 {[
                   { name: "Material UI", color: "text-blue-400" },
                   { name: "shadcn/ui", color: "text-cyan-400" },
@@ -254,9 +257,13 @@ export default function About() {
                 ].map((lib) => (
                   <div
                     key={lib.name}
-                    className="bg-zinc-700/40 px-4 py-2 rounded-lg flex items-center gap-2"
+                    className="bg-zinc-700/40 px-3 py-1 sm:px-4 sm:py-2 rounded-lg flex items-center gap-2"
                   >
-                    <span className={`${lib.color} font-bold`}>{lib.name}</span>
+                    <span
+                      className={`${lib.color} font-bold text-xs sm:text-sm`}
+                    >
+                      {lib.name}
+                    </span>
                   </div>
                 ))}
               </div>

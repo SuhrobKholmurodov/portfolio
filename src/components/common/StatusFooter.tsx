@@ -20,7 +20,7 @@ export function StatusFooter() {
   return (
     <footer className="bg-zinc-900 h-6 border-t border-zinc-800 text-xs text-zinc-400 flex items-center justify-between pr-3 font-mono">
       <div className="flex items-center gap-2">
-        <div className="bg-blue-500 h-5 w-6 flex items-center justify-center">
+        <div className="bg-blue-500 sm:hidden h-5 w-6 flex items-center justify-center">
           <ChevronsRightLeft size={18} className="text-white" />
         </div>
         <div className="flex items-center gap-1 hover:bg-zinc-800 px-1 rounded cursor-pointer">
@@ -38,7 +38,7 @@ export function StatusFooter() {
           <Rocket className="w-3 h-3" />
         </div>
 
-        <span className="hover:bg-zinc-800 px-1 rounded cursor-pointer flex items-center gap-1">
+        <span className="hover:bg-zinc-800 sm:hidden px-1 rounded cursor-pointer flex items-center gap-1">
           <MessageSquare className="w-3 h-3" />
           Hey Cat!!
         </span>
@@ -48,51 +48,51 @@ export function StatusFooter() {
           <AlertTriangle className="w-3 h-3" />0
         </span>
 
-        <span className="hover:bg-zinc-800 px-1 rounded cursor-pointer flex items-center gap-1">
+        <span className="hover:bg-zinc-800 px-1 sm:hidden rounded cursor-pointer flex items-center gap-1">
           <Clock className="w-3 h-3" />2 mins
         </span>
 
-        <span className="hover:bg-zinc-800 px-1 rounded cursor-pointer">
+        <span className="hover:bg-zinc-800 sm:hidden px-1 rounded cursor-pointer">
           [TypeScript Importer]:Symbols: 78
         </span>
-        <span className="hover:bg-zinc-800 px-1 rounded cursor-pointer">
+        <span className="hover:bg-zinc-800 sm:hidden px-1 rounded cursor-pointer">
           <Zap className="w-3 h-3" />
         </span>
       </div>
 
       <div className="flex items-center gap-4">
-        <span className="hover:bg-zinc-800 px-1 rounded cursor-pointer">
+        <span className="hover:bg-zinc-800 sm:hidden px-1 rounded cursor-pointer">
           Ln 17, Col 1
         </span>
 
-        <span className="hover:bg-zinc-800 px-1 rounded cursor-pointer">
+        <span className="hover:bg-zinc-800 sm:hidden px-1 rounded cursor-pointer">
           Spaces: 2
         </span>
 
-        <span className="hover:bg-zinc-800 px-1 rounded cursor-pointer">
+        <span className="hover:bg-zinc-800 sm:hidden px-1 rounded cursor-pointer">
           UTF-8
         </span>
 
-        <span className="hover:bg-zinc-800 px-1 rounded cursor-pointer">
+        <span className="hover:bg-zinc-800 sm:hidden px-1 rounded cursor-pointer">
           CRLF
         </span>
 
-        <span className="hover:bg-zinc-800 px-1 rounded cursor-pointer flex items-center gap-1">
+        <span className="hover:bg-zinc-800 sm:hidden px-1 rounded cursor-pointer flex items-center gap-1">
           <Braces className="w-3 h-3" />
           TypeScript JSX
         </span>
 
-        <span className="hover:bg-zinc-800 px-1 rounded cursor-pointer flex items-center gap-1">
+        <span className="hover:bg-zinc-800 sm:hidden px-1 rounded cursor-pointer flex items-center gap-1">
           <BarChart3 className="w-3 h-3" />
           Chat quota reached
         </span>
 
-        <span className="hover:bg-zinc-800 px-1 rounded cursor-pointer flex items-center gap-1">
+        <span className="hover:bg-zinc-800 px-1 sm:hidden rounded cursor-pointer flex items-center gap-1">
           <RadioTower className="w-3 h-3" />
           Go Live
         </span>
 
-        <span className="hover:bg-zinc-800 px-1 rounded cursor-pointer flex items-center gap-1">
+        <span className="hover:bg-zinc-800  sm:hidden px-1 rounded cursor-pointer flex items-center gap-1">
           <Zap className="w-3 h-3" />
           Quokka
         </span>

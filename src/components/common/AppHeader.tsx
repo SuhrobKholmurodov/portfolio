@@ -14,8 +14,15 @@ const menuItems = [
 
 export function AppHeader() {
   return (
-    <header className="flex items-center h-[35px] w-full bg-zinc-900 border-b border-zinc-800 select-none">
-      <nav className="flex items-center pl-2 gap-2">
+    <header className="flex items-center h-[35px] sm:px-3 w-full bg-zinc-900 border-b border-zinc-800 select-none">
+      <img
+        className="hidden sm:block"
+        src={vscode}
+        alt=""
+        width={"20px"}
+        height={"20px"}
+      />
+      <nav className="flex items-center sm:hidden pl-2 gap-2">
         <img src={vscode} alt="" width={"20px"} height={"20px"} />
         {menuItems.map((item) => (
           <span
@@ -27,7 +34,7 @@ export function AppHeader() {
         ))}
       </nav>
       <div className="flex-1 flex justify-center items-center">
-        <div className="border border-zinc-700 bg-zinc-800 rounded-md px-[120px] py-[2px] flex gap-2 items-center">
+        <div className="border border-zinc-700 bg-zinc-800 rounded-md px-[120px] sm:px-2 py-[2px] flex gap-2 items-center">
           <span className="text-sm text-zinc-200 tracking-tight">
             Suhrob Kholmurodov
           </span>
@@ -41,10 +48,10 @@ export function AppHeader() {
         <button className="w-7 h-7 flex items-center justify-center rounded hover:bg-zinc-800">
           <LayoutPanelLeft size={16} className="text-zinc-100" />
         </button>
-        <button className="w-7 h-7 flex items-center justify-center rounded hover:bg-zinc-800">
+        <button className="w-7 h-7 sm:hidden flex items-center justify-center rounded hover:bg-zinc-800">
           <PanelBottom size={16} className="text-zinc-100" />
         </button>
-        <button className="w-7 h-7 flex items-center justify-center rounded hover:bg-zinc-800">
+        <button className="w-7 h-7 flex sm:hidden items-center justify-center rounded hover:bg-zinc-800">
           <PanelRight size={16} className="text-zinc-100" />
         </button>
       </div>
