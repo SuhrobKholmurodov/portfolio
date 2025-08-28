@@ -1,29 +1,30 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ChevronDown, ChevronRight, FileCode2, Folder } from "lucide-react";
+import { ChevronDown, ChevronRight, Folder } from "lucide-react";
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import ReactIcon from "../../assets/react.svg";
 
 const treeData = [
   {
     label: "Portfolio",
-    icon: <Folder size={16} />,
+    icon: <img src={ReactIcon} alt="React" className="w-4 h-4" />,
     children: [
       {
         label: "Home.tsx",
         id: "home",
-        icon: <FileCode2 size={14} />,
+        icon: <img src={ReactIcon} alt="React" className="w-4 h-4" />,
         path: "/home",
       },
       {
         label: "Contacts.tsx",
         id: "contacts",
-        icon: <FileCode2 size={14} />,
+        icon: <img src={ReactIcon} alt="React" className="w-4 h-4" />,
         path: "/contacts",
       },
       {
         label: "Projects.tsx",
         id: "projects",
-        icon: <FileCode2 size={14} />,
+        icon: <img src={ReactIcon} alt="React" className="w-4 h-4" />,
         path: "/projects",
       },
     ],
@@ -60,7 +61,7 @@ export function FileExplorer() {
                 className={`w-full flex items-center gap-2 px-2 py-1 rounded text-zinc-300 hover:bg-zinc-800 select-none ${
                   location.pathname === file.path
                     ? "bg-zinc-800 text-white"
-                    : ""
+                    : "text-zinc-400"
                 }`}
                 onClick={() => navigate(file.path)}
               >

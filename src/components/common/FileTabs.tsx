@@ -1,6 +1,7 @@
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import ReactIcon from "../../assets/react.svg";
 
 type FileTab = {
   id: string;
@@ -25,9 +26,9 @@ export function FileTabs({
         <div
           key={file.id}
           className={cn(
-            "flex items-center px-3 py-[10px] gap-2 cursor-pointer text-xs border-r border-zinc-700 relative group",
+            "flex items-center px-4 py-[10px] gap-2 cursor-pointer text-xs border-r border-zinc-700 relative group",
             activePath === file.path
-              ? "bg-zinc-800 text-yellow-200"
+              ? "bg-zinc-800 text-white"
               : "bg-zinc-900 text-zinc-400 hover:bg-zinc-800"
           )}
           onClick={() => setActivePath(file.path)}
@@ -35,7 +36,7 @@ export function FileTabs({
           {activePath === file.path && (
             <div className="absolute top-0 left-0 right-0 h-0.5 bg-blue-500" />
           )}
-
+          <img src={ReactIcon} alt="React" className="w-4 h-4" />
           <span className="font-semibold">{file.label}</span>
           <span className="opacity-70">{file.path.split("/")[0]}</span>
 
