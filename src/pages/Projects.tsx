@@ -100,7 +100,7 @@ export default function Projects() {
       </nav>
 
       <main className="flex-grow overflow-auto bg-gradient-to-br from-zinc-900 via-zinc-950 to-black text-zinc-100 p-6 min-h-0 relative z-10">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-[1080px] mx-auto">
           <div className="flex items-center gap-3 mb-8 group">
             <h1 className="text-4xl font-bold bg-clip-text text-blue-400 duration-700">
               Projects

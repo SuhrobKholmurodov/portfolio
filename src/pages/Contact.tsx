@@ -10,8 +10,8 @@ import { Link } from "react-router-dom";
 import { Mail, Github, Phone, Instagram, Code, Box } from "lucide-react";
 import ReactIcon from "../assets/react.svg";
 
-export default function Contacts() {
-  const contacts = [
+export default function Contact() {
+  const Contact = [
     {
       name: "Email",
       value: "suhrobkholmurodov1@gmail.com",
@@ -57,7 +57,7 @@ export default function Contacts() {
                 className="hover:text-white hover:cursor-auto"
                 asChild
               >
-                <Link to={"/contacts"}>Contacts.tsx</Link>
+                <Link to={"/contact"}>Contact.tsx</Link>
               </BreadcrumbLink>
               <BreadcrumbSeparator>{">"}</BreadcrumbSeparator>
             </BreadcrumbItem>
@@ -65,7 +65,7 @@ export default function Contacts() {
             <BreadcrumbItem className="flex items-center space-x-1">
               <Box className="w-4 h-4 text-violet-600" />
               <BreadcrumbPage className="text-zinc-300">
-                Contacts
+                Contact{" "}
               </BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
@@ -74,14 +74,16 @@ export default function Contacts() {
       <main className="flex-grow overflow-auto bg-gradient-to-br from-zinc-900 via-zinc-950 to-black text-zinc-100 p-6 min-h-0">
         <div className="max-w-[1080px] mx-auto">
           <div className="bg-gradient-to-r from-blue-500/10 via-cyan-500/10 to-zinc-800/10 border border-zinc-700/50 rounded-3xl p-8 mb-10 backdrop-blur-sm">
-            <h1 className="text-3xl font-bold text-cyan-400 mb-4">Contacts</h1>
+            <h1 className="text-3xl font-bold text-cyan-400 mb-4">
+              Contact me
+            </h1>
             <p className="text-zinc-300 mb-6">
               Here you can find all the ways to reach me. Feel free to contact
               me for collaborations, questions, or just to say hi!
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {contacts.map((contact) => (
+              {Contact.map((contact) => (
                 <div
                   key={contact.name}
                   className="flex items-center gap-4 p-4 bg-zinc-800/30 border border-zinc-700/50 rounded-xl backdrop-blur-sm hover:scale-105 transition-transform"

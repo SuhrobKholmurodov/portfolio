@@ -22,10 +22,10 @@ const treeData = [
         path: "/about",
       },
       {
-        label: "Contacts.tsx",
-        id: "contacts",
+        label: "Contact.tsx",
+        id: "contact",
         icon: <img src={ReactIcon} alt="React" className="w-4 h-4" />,
-        path: "/contacts",
+        path: "/contact",
       },
       {
         label: "Projects.tsx",

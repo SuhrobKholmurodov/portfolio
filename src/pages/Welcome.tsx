@@ -1,60 +1,103 @@
-import { Home, Folder, Mail, ExternalLink } from "lucide-react";
+import { Home, Folder, Mail, ExternalLink, User } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Welcome() {
   return (
-    <div className="flex flex-col justify-center items-center h-full bg-zinc-950">
-      <div className="text-2xl font-bold text-zinc-200 mb-2 text-center tracking-tight">
-        Suhrob Kholmurodov Portfolio
+    <div className="h-full flex flex-col bg-zinc-950 items-center justify-center">
+      <div className="text-center mb-4">
+        <div className="flex items-center justify-center gap-3 mb-4">
+          <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+          <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+        </div>
+
+        <h1 className="text-3xl font-bold text-zinc-100 mb-2 tracking-tight bg-gradient-to-r from-zinc-100 to-zinc-300 bg-clip-text text-transparent">
+          Suhrob Kholmurodov
+        </h1>
+
+        <div className="text-zinc-400 mb-1 text-sm font-mono">
+          Frontend Developer & UI Enthusiast
+        </div>
       </div>
-      <div className="text-zinc-400 mb-8 text-center text-sm">
-        VSCode-inspired developer workspace.
-        <br />
-        Explore my work, projects, and contact info in a familiar environment.
-      </div>
-      <div className="w-full max-w-sm flex flex-col gap-4 mb-8">
+      <div className="w-full max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-4 mb-40">
         <Link
           to="/home"
-          className="flex items-center gap-3 bg-zinc-900/60 border border-zinc-800 hover:border-yellow-400 px-4 py-3 rounded-lg transition group"
+          className="flex items-center gap-4 bg-zinc-900/80 hover:bg-zinc-800/60 border border-zinc-800 hover:border-yellow-500/30 px-5 py-4 rounded-xl transition-all duration-300 group hover:scale-[1.02] backdrop-blur-sm"
         >
-          <Home className="text-yellow-200" size={22} />
-          <span className="text-zinc-300 font-semibold">Home</span>
+          <div className="p-2 bg-yellow-400/10 rounded-lg group-hover:bg-yellow-400/20 transition-colors">
+            <Home className="text-yellow-400" size={24} />
+          </div>
+          <div className="flex-1">
+            <div className="text-zinc-200 font-semibold">Home</div>
+            <div className="text-zinc-500 text-sm mt-1">
+              Overview and introduction
+            </div>
+          </div>
           <ExternalLink
-            size={16}
-            className="ml-auto text-zinc-500 group-hover:text-yellow-300"
+            size={18}
+            className="text-zinc-600 group-hover:text-yellow-400 transition-colors"
           />
         </Link>
+
+        <Link
+          to="/about"
+          className="flex items-center gap-4 bg-zinc-900/80 hover:bg-zinc-800/60 border border-zinc-800 hover:border-purple-500/30 px-5 py-4 rounded-xl transition-all duration-300 group hover:scale-[1.02] backdrop-blur-sm"
+        >
+          <div className="p-2 bg-purple-500/10 rounded-lg group-hover:bg-purple-500/20 transition-colors">
+            <User className="text-purple-400" size={24} />
+          </div>
+          <div className="flex-1">
+            <div className="text-zinc-200 font-semibold">About</div>
+            <div className="text-zinc-500 text-sm mt-1">
+              Learn more about me and my skills
+            </div>
+          </div>
+          <ExternalLink
+            size={18}
+            className="text-zinc-600 group-hover:text-purple-400 transition-colors"
+          />
+        </Link>
+
         <Link
           to="/projects"
-          className="flex items-center gap-3 bg-zinc-900/60 border border-zinc-800 hover:border-blue-400 px-4 py-3 rounded-lg transition group"
+          className="flex items-center gap-4 bg-zinc-900/80 hover:bg-zinc-800/60 border border-zinc-800 hover:border-blue-500/30 px-5 py-4 rounded-xl transition-all duration-300 group hover:scale-[1.02] backdrop-blur-sm"
         >
-          <Folder className="text-blue-300" size={22} />
-          <span className="text-zinc-300 font-semibold">Projects</span>
+          <div className="p-2 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20 transition-colors">
+            <Folder className="text-blue-400" size={24} />
+          </div>
+          <div className="flex-1">
+            <div className="text-zinc-200 font-semibold">Projects</div>
+            <div className="text-zinc-500 text-sm mt-1">
+              Explore my work and creations
+            </div>
+          </div>
           <ExternalLink
-            size={16}
-            className="ml-auto text-zinc-500 group-hover:text-blue-300"
+            size={18}
+            className="text-zinc-600 group-hover:text-blue-400 transition-colors"
           />
         </Link>
-        <Link
-          to="/contacts"
-          className="flex items-center gap-3 bg-zinc-900/60 border border-zinc-800 hover:border-green-400 px-4 py-3 rounded-lg transition group"
-        >
-          <Mail className="text-green-400" size={22} />
-          <span className="text-zinc-300 font-semibold">Contacts</span>
-          <ExternalLink
-            size={16}
-            className="ml-auto text-zinc-500 group-hover:text-green-400"
-          />
-        </Link>
-      </div>
-      <div className="text-zinc-400 text-sm mb-10 text-center max-w-md">
-        <span className="font-semibold text-zinc-300">Note: </span>
-        Search functionality (Ctrl + P) is not available yet. <br />
-        Please use the sidebar or the links above to navigate between sections.
-      </div>
 
-      <div className="text-xs text-zinc-600 mt-10 text-center">
-        <br />© Suhrob Kholmurodov
+        <Link
+          to="/contact"
+          className="flex items-center gap-4 bg-zinc-900/80 hover:bg-zinc-800/60 border border-zinc-800 hover:border-green-500/30 px-5 py-4 rounded-xl transition-all duration-300 group hover:scale-[1.02] backdrop-blur-sm"
+        >
+          <div className="p-2 bg-green-500/10 rounded-lg group-hover:bg-green-500/20 transition-colors">
+            <Mail className="text-green-400" size={24} />
+          </div>
+          <div className="flex-1">
+            <div className="text-zinc-200 font-semibold">Contact</div>
+            <div className="text-zinc-500 text-sm mt-1">
+              Get in touch with me
+            </div>
+          </div>
+          <ExternalLink
+            size={18}
+            className="text-zinc-600 group-hover:text-green-400 transition-colors"
+          />
+        </Link>
+      </div>
+      <div className="text-xs text-zinc-600 text-center font-mono">
+        © {new Date().getFullYear()} Suhrob Kholmurodov
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ import { StatusFooter } from "@/components/common/StatusFooter";
 
 import Welcome from "@/pages/Welcome";
 import Home from "@/pages/Home";
-import Contacts from "@/pages/Contacts";
+import Contact from "@/pages/Contact";
 import Projects from "@/pages/Projects";
 import About from "@/pages/About";
 
@@ -22,10 +22,10 @@ const filePages = [
   { id: "home", label: "Home.tsx", path: "/home", component: Home },
   { id: "about", label: "About.tsx", path: "/about", component: About },
   {
-    id: "contacts",
-    label: "Contacts.tsx",
-    path: "/contacts",
-    component: Contacts,
+    id: "contact",
+    label: "Contact.tsx",
+    path: "/contact",
+    component: Contact,
   },
   {
     id: "projects",
@@ -113,7 +113,7 @@ function VSCodeLayout() {
             <Routes>
               <Route path="/" element={<Welcome />} />
               <Route path="/home" element={<Home />} />
-              <Route path="/contacts" element={<Contacts />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/about" element={<About />} />
             </Routes>
