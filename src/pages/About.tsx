@@ -21,6 +21,34 @@ import {
 export default function About() {
   return (
     <div className="flex flex-col bg-zinc-900 h-full">
+      <style>
+        {`
+          .overflow-auto::-webkit-scrollbar {
+            width: 10px;
+          }
+          
+          .overflow-auto::-webkit-scrollbar-track {
+            background: rgba(39, 39, 42, 0.3);
+            border-radius: 5px;
+          }
+          
+          .overflow-auto::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #0891b2, #0e7490);
+            border-radius: 5px;
+            border: 2px solid rgba(0, 0, 0, 0.2);
+          }
+          
+          .overflow-auto::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, #06b6d4, #0891b2);
+          }
+          
+          .overflow-auto {
+            scrollbar-width: thin;
+            scrollbar-color: #0891b2 rgba(39, 39, 42, 0.3);
+          }
+        `}
+      </style>
+
       <nav aria-label="Breadcrumb" className="pl-3 py-2">
         <Breadcrumb>
           <BreadcrumbList className="flex items-center space-x-1 text-zinc-300 text-sm font-mono">
