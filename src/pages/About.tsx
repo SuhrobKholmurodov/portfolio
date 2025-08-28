@@ -43,7 +43,7 @@ export default function About() {
             </BreadcrumbItem>
 
             <BreadcrumbItem className="flex items-center space-x-1">
-              <Box className="w-4 h-4 text-cyan-500" />
+              <Box className="w-4 h-4 text-violet-600" />
               <BreadcrumbPage className="text-zinc-300">About</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
@@ -51,7 +51,7 @@ export default function About() {
       </nav>
 
       <main className="flex-grow overflow-auto bg-gradient-to-br from-zinc-900 via-zinc-950 to-black text-zinc-100 p-6 min-h-0">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-[1080px] mx-auto">
           <div className="bg-gradient-to-r from-blue-900/20 via-zinc-800/20 to-black/20 border border-zinc-700/50 rounded-3xl p-8 mb-10 backdrop-blur-sm">
             <div className="flex items-start gap-4 mb-6">
               <User className="w-8 h-8 text-cyan-400 flex-shrink-0 mt-1" />
