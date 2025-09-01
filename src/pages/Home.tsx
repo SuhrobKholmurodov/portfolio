@@ -29,7 +29,7 @@ export default function Home() {
         </Breadcrumb>
       </nav>
 
-      <main className="flex-grow overflow-auto bg-gradient-to-br from-zinc-900 via-zinc-950 to-black text-zinc-100 p-6 min-h-0">
+      <main className="flex-grow overflow-auto bg-zinc-900 shadow-md shadow-gray-500 text-zinc-100 p-6 min-h-0">
         <div className="max-w-5xl mx-auto text-center">
           <h1 className="text-6xl sm:text-2xl sm:flex sm:justify-center sm:gap-2 font-bold mb-10 sm:mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-text-pulse">
             Suhrob

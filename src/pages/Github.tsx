@@ -11,7 +11,7 @@ export const Github = () => {
   const { data: user, isLoading } = useGetUserQuery();
   if (isLoading || !user) {
     return (
-      <div className="flex flex-1 h-full bg-gradient-to-br from-zinc-900 via-black to-zinc-950 p-6 sm:p-4 items-center justify-center">
+      <div className="flex flex-1 h-full bg-zinc-900 shadow-md shadow-gray-500 p-6 sm:p-4 items-center justify-center">
         <div className="w-12 h-12 border-4 border-cyan-400 border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
