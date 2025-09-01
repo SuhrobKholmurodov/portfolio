@@ -1,9 +1,9 @@
-import { Search, Github, Folders, Settings, User } from "lucide-react";
+import { Github, Folders, Settings, User } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useNavigate } from "react-router-dom";
 
 const sidebarIcons = [
   { id: "explorer", icon: <Folders size={24} />, label: "Explorer" },
-  { id: "search", icon: <Search size={24} />, label: "Search" },
   { id: "github", icon: <Github size={24} />, label: "GitHub" },
 ];
 
@@ -19,6 +19,18 @@ export function MainSidebar({
   activeSection: string;
   setActiveSection: (id: string) => void;
 }) {
+  const navigate = useNavigate();
+
+  const handleClick = (id: string) => {
+    setActiveSection(id);
+
+    if (id === "github") {
+      navigate("/github");
+    } else if (id === "explorer") {
+      navigate("/explore/home");
+    }
+  };
+
   return (
     <nav className="bg-zinc-900 border-r border-zinc-500 flex flex-col justify-between h-full items-center">
       <div className="mt-2 flex flex-col items-center">
@@ -26,7 +38,7 @@ export function MainSidebar({
           <button
             key={id}
             aria-label={label}
-            onClick={() => setActiveSection(id)}
+            onClick={() => handleClick(id)}
             className={cn(
               "mb-2 w-[45px] h-[50px] flex items-center justify-center rounded transition-colors outline-none border-none relative",
               activeSection === id

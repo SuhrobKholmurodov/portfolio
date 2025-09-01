@@ -1,4 +1,11 @@
-import { LayoutPanelLeft, PanelBottom, PanelRight } from "lucide-react";
+import { useLocation } from "react-router-dom";
+import {
+  LayoutPanelLeft,
+  PanelBottom,
+  PanelRight,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import vscode from "../../assets/vscode.png";
 
 const menuItems = [
@@ -12,18 +19,33 @@ const menuItems = [
   "Help",
 ];
 
-export function AppHeader() {
+interface AppHeaderProps {
+  sidebarOpen: boolean;
+  setSidebarOpen: (open: boolean) => void;
+}
+
+export function AppHeader({ sidebarOpen, setSidebarOpen }: AppHeaderProps) {
+  const location = useLocation();
+
+  const isGithubPage = location.pathname === "/github";
+
   return (
     <header className="flex items-center h-[35px] sm:px-3 w-full bg-zinc-900 border-b border-zinc-800 select-none">
-      <img
-        className="hidden sm:block"
-        src={vscode}
-        alt=""
-        width={"20px"}
-        height={"20px"}
-      />
+      <button
+        className="sm:block sm:z-50 hidden p-1 hover:bg-zinc-800 rounded"
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+      >
+        {isGithubPage ? (
+          <img src={vscode} alt="VSCode" className="w-5 h-5" />
+        ) : sidebarOpen ? (
+          <ChevronLeft size={20} className="text-zinc-300" />
+        ) : (
+          <ChevronRight size={20} className="text-zinc-300" />
+        )}
+      </button>
+
       <nav className="flex items-center sm:hidden pl-2 gap-2">
-        <img src={vscode} alt="" width={"20px"} height={"20px"} />
+        <img src={vscode} alt="VSCode" width={20} height={20} />
         {menuItems.map((item) => (
           <span
             key={item}
@@ -33,6 +55,7 @@ export function AppHeader() {
           </span>
         ))}
       </nav>
+
       <div className="flex-1 flex justify-center items-center">
         <div className="border border-zinc-700 bg-zinc-800 rounded-md px-[120px] sm:px-2 py-[2px] flex gap-2 items-center">
           <span className="text-sm text-zinc-200 tracking-tight">
@@ -44,6 +67,7 @@ export function AppHeader() {
           </span>
         </div>
       </div>
+
       <div className="flex items-center pr-2">
         <button className="w-7 h-7 flex items-center justify-center rounded hover:bg-zinc-800">
           <LayoutPanelLeft size={16} className="text-zinc-100" />

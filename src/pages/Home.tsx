@@ -31,16 +31,16 @@ export default function Home() {
 
       <main className="flex-grow overflow-auto bg-gradient-to-br from-zinc-900 via-zinc-950 to-black text-zinc-100 p-6 min-h-0">
         <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-6xl sm:text-3xl sm:flex sm:items-center md:text-8xl sm:gap-2 font-bold mb-10 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-text-pulse">
+          <h1 className="text-6xl sm:text-3xl sm:flex sm:items-center md:text-8xl sm:gap-2 font-bold mb-10 sm:mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-text-pulse">
             Suhrob
             <span className="block text-4xl sm:text-3xl md:text-6xl text-zinc-300 mt-2 sm:mt-0">
               Kholmurodov
             </span>
           </h1>
 
-          <div className="bg-gradient-to-r from-blue-500/10 via-emerald-500/10 to-cyan-500/10 border border-zinc-700/50 rounded-3xl p-10 backdrop-blur-sm hover:scale-[1.02] transition-transform duration-500 max-w-2xl mx-auto">
+          <div className="bg-gradient-to-r from-blue-500/10 via-emerald-500/10 to-cyan-500/10 border border-zinc-700/50 rounded-3xl p-10 sm:p-4 backdrop-blur-sm hover:scale-[1.02] transition-transform duration-500 max-w-2xl mx-auto">
             <div className="flex items-start justify-center gap-4 mb-6">
-              <Sparkles className="w-8 sm:w-5 sm:h-5 h-8 text-cyan-400 flex-shrink-0 mt-1 animate-spin-slow" />
+              <Sparkles className="w-8 sm:w-4 sm:h-4 h-8 text-cyan-400 flex-shrink-0 mt-1 animate-spin-slow" />
               <div className="text-left">
                 <h2 className="text-3xl sm:text-xl font-semibold text-zinc-200 mb-3">
                   Frontend Developer & UI Designer
@@ -59,7 +59,7 @@ export default function Home() {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
               <div className="relative flex items-center justify-center space-x-3">
-                <span className="text-zinc-200 font-semibold text-lg">
+                <span className="text-zinc-200 font-semibold text-lg sm:text-sm">
                   View Projects
                 </span>
                 <span className="text-cyan-400 group-hover:translate-x-2 transition-transform duration-300">

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Welcome() {
   return (
-    <div className="h-full flex flex-col px-4 bg-zinc-950 items-center justify-center">
+    <div className="h-full flex flex-col px-4 sm:pt-[80px] bg-zinc-950 items-center justify-center">
       <div className="text-center mb-4 sm:mt-10">
         <div className="flex items-center justify-center gap-3 mb-4">
           <div className="w-3 h-3 bg-red-500 rounded-full"></div>
@@ -95,9 +95,9 @@ export default function Welcome() {
             className="text-zinc-600 group-hover:text-green-400 transition-colors"
           />
         </Link>
-      </div>
-      <div className="text-xs text-zinc-600 text-center font-mono">
-        © {new Date().getFullYear()} Suhrob Kholmurodov
+        <div className="text-xs hidden sm:block text-zinc-600 text-center font-mono">
+          © {new Date().getFullYear()} Suhrob Kholmurodov
+        </div>
       </div>
     </div>
   );

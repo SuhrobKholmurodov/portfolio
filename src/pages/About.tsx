@@ -67,7 +67,7 @@ export default function About() {
 
       <main className="flex-grow overflow-auto bg-gradient-to-br from-zinc-900 via-zinc-950 to-black text-zinc-100 p-4 sm:p-6 min-h-0">
         <div className="max-w-[1080px] mx-auto">
-          <div className="bg-gradient-to-r from-blue-900/20 via-zinc-800/20 to-black/20 border border-zinc-700/50 rounded-3xl p-6 sm:p-4 mb-6 sm:mb-10 backdrop-blur-sm">
+          <div className="bg-gradient-to-r from-blue-900/20 via-zinc-800/20 to-black/20 border border-zinc-700/50 rounded-3xl p-6 sm:p-2 mb-6 sm:mb-10 backdrop-blur-sm">
             <div className="flex flex-col sm:flex-row items-start gap-4 mb-6">
               <User className="w-8 h-8 text-cyan-400 flex-shrink-0 mt-1" />
               <div className="text-left">

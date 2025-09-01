@@ -61,7 +61,7 @@ export default function Contact() {
       <main className="flex-grow overflow-auto bg-gradient-to-br from-zinc-900 via-zinc-950 to-black text-zinc-100 p-6 sm:p-4 min-h-0">
         <div className="max-w-[1080px] mx-auto">
           <div className="bg-gradient-to-r from-blue-500/10 via-cyan-500/10 to-zinc-800/10 border border-zinc-700/50 rounded-3xl p-8 sm:p-4 mb-10 backdrop-blur-sm">
-            <h1 className="text-3xl font-bold text-cyan-400 mb-4">
+            <h1 className="text-3xl sm:text-xl font-bold text-cyan-400 mb-4">
               Contact me
             </h1>
             <p className="text-zinc-300 mb-6">
