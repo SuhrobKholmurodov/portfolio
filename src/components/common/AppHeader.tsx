@@ -30,19 +30,22 @@ export function AppHeader({ sidebarOpen, setSidebarOpen }: AppHeaderProps) {
   const isGithubPage =
     location.pathname === "/github" || location.pathname === "/";
 
+  let buttonIcon;
+  if (isGithubPage) {
+    buttonIcon = <img src={vscode} alt="VSCode" className="w-5 h-5" />;
+  } else if (sidebarOpen) {
+    buttonIcon = <ChevronLeft size={28} className="text-zinc-300" />;
+  } else {
+    buttonIcon = <ChevronRight size={28} className="text-zinc-300" />;
+  }
+
   return (
     <header className="flex items-center h-[35px] sm:px-3 w-full bg-zinc-900 border-b border-zinc-800 select-none">
       <button
         className="sm:block sm:z-50 hidden p-1 ml-[-6px] hover:bg-zinc-800 rounded"
         onClick={() => setSidebarOpen(!sidebarOpen)}
       >
-        {isGithubPage ? (
-          <img src={vscode} alt="VSCode" className="w-5 h-5" />
-        ) : sidebarOpen ? (
-          <ChevronLeft size={28} className="text-zinc-300" />
-        ) : (
-          <ChevronRight size={28} className="text-zinc-300" />
-        )}
+        {buttonIcon}
       </button>
 
       <nav className="flex items-center sm:hidden pl-2 gap-2">
