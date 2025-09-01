@@ -27,7 +27,8 @@ interface AppHeaderProps {
 export function AppHeader({ sidebarOpen, setSidebarOpen }: AppHeaderProps) {
   const location = useLocation();
 
-  const isGithubPage = location.pathname === "/github";
+  const isGithubPage =
+    location.pathname === "/github" || location.pathname === "/";
 
   return (
     <header className="flex items-center h-[35px] sm:px-3 w-full bg-zinc-900 border-b border-zinc-800 select-none">
