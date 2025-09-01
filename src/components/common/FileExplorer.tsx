@@ -62,7 +62,7 @@ export function FileExplorer({
       >
         <div className="font-bold flex items-center justify-between text-xs sm:text-sm px-3 mb-2 text-zinc-300 tracking-tight">
           <p>EXPLORER </p>
-          <div className="hover:bg-zinc-800 px-1 pb-2 rounded cursor-pointer">
+          <div className="hover:bg-zinc-800 px-1 pb-2 rounded hover:cursor-auto">
             . . .
           </div>
         </div>

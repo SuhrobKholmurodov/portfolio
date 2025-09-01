@@ -31,9 +31,9 @@ export default function Home() {
 
       <main className="flex-grow overflow-auto bg-gradient-to-br from-zinc-900 via-zinc-950 to-black text-zinc-100 p-6 min-h-0">
         <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-6xl sm:text-3xl sm:flex sm:items-center md:text-8xl sm:gap-2 font-bold mb-10 sm:mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-text-pulse">
+          <h1 className="text-6xl sm:text-2xl sm:flex sm:justify-center sm:gap-2 font-bold mb-10 sm:mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-text-pulse">
             Suhrob
-            <span className="block text-4xl sm:text-3xl md:text-6xl text-zinc-300 mt-2 sm:mt-0">
+            <span className="block text-4xl sm:text-2xl md:text-6xl text-zinc-300 mt-2 sm:mt-0">
               Kholmurodov
             </span>
           </h1>
@@ -54,7 +54,7 @@ export default function Home() {
             </div>
 
             <Link
-              to="/projects"
+              to="/explore/projects"
               className="group relative inline-block px-10 py-4 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-2xl hover:border-cyan-400 transition-all duration-300 overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>

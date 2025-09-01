@@ -59,10 +59,10 @@ export function AppHeader({ sidebarOpen, setSidebarOpen }: AppHeaderProps) {
 
       <div className="flex-1 flex justify-center items-center">
         <div className="border border-zinc-700 bg-zinc-800 rounded-md px-[120px] sm:px-2 py-[2px] flex gap-2 items-center">
-          <span className="text-sm text-zinc-200 tracking-tight">
+          <span className="text-xs text-zinc-200 tracking-tight">
             Suhrob Kholmurodov
           </span>
-          <span className="text-sm text-zinc-200 tracking-tight">|</span>
+          <span className="text-xs text-zinc-200 tracking-tight">|</span>
           <span className="text-xs text-blue-400 font-medium">
             Frontend Developer
           </span>
