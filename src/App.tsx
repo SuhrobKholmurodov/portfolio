@@ -52,7 +52,7 @@ function VSCodeLayout() {
       location.pathname.startsWith("/explore") &&
       !openTabs.includes(location.pathname)
     ) {
-      const newTabs = [...openTabs, location.pathname];
+      const newTabs = [location.pathname, ...openTabs];
       setOpenTabs(newTabs);
       localStorage.setItem("openTabs", JSON.stringify(newTabs));
     }
