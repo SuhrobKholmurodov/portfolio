@@ -115,13 +115,15 @@ function VSCodeLayout() {
           />
         )}
 
-        <div className="flex-1 flex flex-col min-h-0 bg-background">
-          <FileTabs
-            tabs={tabData}
-            activePath={location.pathname}
-            setActivePath={navigate}
-            onCloseTab={handleCloseTab}
-          />
+        <div className="flex-1 flex flex-col min-h-0 bg-background overflow-x-hidden">
+          <div className="overflow-x-auto bg-zinc-900">
+            <FileTabs
+              tabs={tabData}
+              activePath={location.pathname}
+              setActivePath={navigate}
+              onCloseTab={handleCloseTab}
+            />
+          </div>
           <div className="flex-1 min-h-0 overflow-auto bg-background">
             <Routes>
               <Route path="/" element={<Welcome />} />

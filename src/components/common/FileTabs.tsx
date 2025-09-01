@@ -21,7 +21,7 @@ export function FileTabs({
   onCloseTab: (id: string) => void;
 }) {
   return (
-    <div className="bg-zinc-900 flex items-center h-auto overflow-x-auto scrollbar-hide">
+    <div className="bg-zinc-900 flex w-max sm:w-full items-center h-auto overflow-x-auto scrollbar-hide">
       <style>
         {`
           .scrollbar-hide {
