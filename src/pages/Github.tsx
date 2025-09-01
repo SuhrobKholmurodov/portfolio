@@ -6,6 +6,7 @@ import {
   Users,
   ExternalLink,
 } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 export const Github = () => {
   const { data: user, isLoading } = useGetUserQuery();
@@ -48,6 +49,9 @@ export const Github = () => {
 
   return (
     <div className="flex flex-1 h-full bg-gradient-to-br from-zinc-900 via-black to-zinc-950 text-zinc-100 p-6 sm:p-4 overflow-auto min-h-0">
+      <Helmet>
+        <title>Github | Suhrob Kholmurodov</title>
+      </Helmet>
       <div className="max-w-[1080px] mx-auto">
         <div className="flex flex-col sm:flex-row sm:items-start items-center gap-6 mb-8 bg-gradient-to-r from-cyan-900/30 via-zinc-800/30 to-black/30 border border-zinc-700/50 rounded-3xl p-6 sm:p-4 backdrop-blur-md shadow-lg">
           <img

@@ -1,4 +1,5 @@
 import { Home, Folder, Mail, ExternalLink, User } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 const links = [
   {
@@ -36,6 +37,9 @@ export default function Welcome() {
 
   return (
     <div className="h-full flex flex-col px-4 sm:pt-[80px] bg-zinc-950 items-center justify-center">
+      <Helmet>
+        <title>Welcome | Suhrob Kholmurodov</title>
+      </Helmet>
       <div className="text-center mb-4 sm:mt-10">
         <div className="flex items-center justify-center gap-3 mb-4">
           <div className="w-3 h-3 bg-red-500 rounded-full"></div>

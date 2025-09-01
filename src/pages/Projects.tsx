@@ -9,6 +9,7 @@ import {
 import { Link } from "react-router-dom";
 import { Box, Folder, Code, Globe, ExternalLink } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 export default function Projects() {
   const projects = [
@@ -83,6 +84,9 @@ export default function Projects() {
       </nav>
 
       <main className="flex-grow overflow-auto bg-zinc-900 shadow-md shadow-gray-500 text-zinc-100 p-6 min-h-0 relative z-10">
+        <Helmet>
+          <title>Projects | Suhrob Kholmurodov</title>
+        </Helmet>
         <div className="max-w-[1080px] mx-auto">
           <div className="flex items-center gap-3 mb-8 group">
             <h1 className="text-4xl font-bold sm:text-2xl bg-clip-text text-blue-400 duration-700">

@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Link } from "react-router-dom";
 import { Mail, Github, Phone, Instagram, Code, Box } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 export default function Contact() {
   const contacts = [
@@ -63,6 +64,9 @@ export default function Contact() {
       </nav>
 
       <main className="flex-grow overflow-auto bg-zinc-900 shadow-md shadow-gray-500 text-zinc-100 p-6 sm:p-4 min-h-0">
+        <Helmet>
+          <title>Contact | Suhrob Kholmurodov</title>
+        </Helmet>
         <div className="max-w-[1080px] mx-auto">
           <div className="bg-gradient-to-r from-blue-500/10 via-cyan-500/10 to-zinc-800/10 border border-zinc-700/50 rounded-3xl p-8 sm:p-4 mb-10 backdrop-blur-sm">
             <h1 className="text-3xl sm:text-xl font-bold text-cyan-400 mb-4">

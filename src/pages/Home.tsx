@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Link } from "react-router-dom";
 import { Box, Sparkles } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 export default function Home() {
   return (
@@ -30,6 +31,9 @@ export default function Home() {
       </nav>
 
       <main className="flex-grow overflow-auto bg-zinc-900 shadow-md shadow-gray-500 text-zinc-100 p-6 min-h-0">
+        <Helmet>
+          <title>Home | Suhrob Kholmurodov</title>
+        </Helmet>
         <div className="max-w-5xl mx-auto text-center">
           <h1 className="text-6xl sm:text-2xl sm:flex sm:justify-center sm:gap-2 font-bold mb-10 sm:mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-text-pulse">
             Suhrob

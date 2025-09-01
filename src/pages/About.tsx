@@ -16,6 +16,7 @@ import {
   Calendar,
   Box,
 } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 export default function About() {
   return (
@@ -66,6 +67,9 @@ export default function About() {
       </nav>
 
       <main className="flex-grow overflow-auto bg-zinc-900 shadow-md shadow-gray-500 text-zinc-100 p-4 sm:p-6 min-h-0">
+        <Helmet>
+          <title>About | Suhrob Kholmurodov</title>
+        </Helmet>
         <div className="max-w-[1080px] mx-auto">
           <div className="bg-gradient-to-r from-blue-900/20 via-zinc-800/20 to-black/20 border border-zinc-700/50 rounded-3xl p-6 sm:p-2 mb-6 sm:mb-10 backdrop-blur-sm">
             <div className="flex flex-col sm:flex-row items-start gap-4 mb-6">
