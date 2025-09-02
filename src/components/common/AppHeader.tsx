@@ -6,6 +6,12 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import vscode from "../../assets/vscode.png";
 
 const menuItems = [
@@ -36,7 +42,21 @@ export function AppHeader({ sidebarOpen, setSidebarOpen }: AppHeaderProps) {
   } else if (sidebarOpen) {
     buttonIcon = <ChevronLeft size={28} className="text-zinc-300" />;
   } else {
-    buttonIcon = <ChevronRight size={28} className="text-zinc-300" />;
+    buttonIcon = (
+      <TooltipProvider>
+        <Tooltip open>
+          <TooltipTrigger asChild>
+            <ChevronRight size={28} className="text-zinc-300" />
+          </TooltipTrigger>
+          <TooltipContent
+            side="right"
+            className="text-[10px] hidden sm:flex text-gray-300 bg-gray-600 backdrop-blur-md rounded-md px-3 py-[3px]"
+          >
+            Other Pages
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    );
   }
 
   return (
@@ -60,7 +80,7 @@ export function AppHeader({ sidebarOpen, setSidebarOpen }: AppHeaderProps) {
         ))}
       </nav>
 
-      <div className="flex-1 flex justify-center items-center">
+      <div className="flex-1 sm:flex sm:justify-end flex justify-center items-center">
         <div className="border border-zinc-700 bg-zinc-800 rounded-md px-[120px] sm:px-2 py-[2px] flex gap-2 items-center">
           <span className="text-xs text-zinc-200 tracking-tight">
             Suhrob Kholmurodov
@@ -72,14 +92,14 @@ export function AppHeader({ sidebarOpen, setSidebarOpen }: AppHeaderProps) {
         </div>
       </div>
 
-      <div className="flex items-center pr-2">
-        <button className="w-7 h-7 flex items-center justify-center rounded hover:bg-zinc-800">
+      <div className="flex sm:hidden items-center pr-2">
+        <button className="w-7 h-7  flex items-center justify-center rounded hover:bg-zinc-800">
           <LayoutPanelLeft size={16} className="text-zinc-100" />
         </button>
-        <button className="w-7 h-7 sm:hidden flex items-center justify-center rounded hover:bg-zinc-800">
+        <button className="w-7 h-7 flex items-center justify-center rounded hover:bg-zinc-800">
           <PanelBottom size={16} className="text-zinc-100" />
         </button>
-        <button className="w-7 h-7 flex sm:hidden items-center justify-center rounded hover:bg-zinc-800">
+        <button className="w-7 h-7 flex items-center justify-center rounded hover:bg-zinc-800">
           <PanelRight size={16} className="text-zinc-100" />
         </button>
       </div>

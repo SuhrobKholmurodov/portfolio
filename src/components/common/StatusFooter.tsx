@@ -1,15 +1,12 @@
 import {
   GitBranch,
   AlertTriangle,
-  Clock,
-  BarChart3,
   Zap,
   Palette,
   RefreshCcw,
   GitGraph,
   Rocket,
   CircleX,
-  MessageSquare,
   Braces,
   RadioTower,
   BellDot,
@@ -38,20 +35,10 @@ export function StatusFooter() {
           <Rocket className="w-3 h-3" />
         </div>
 
-        <span className="hover:bg-zinc-800 sm:hidden px-1 rounded cursor-pointer flex items-center gap-1">
-          <MessageSquare className="w-3 h-3" />
-          Hey Cat!!
-        </span>
-
         <span className="hover:bg-zinc-800 px-1 rounded cursor-pointer flex items-center gap-1">
           <CircleX className="w-3 h-3" /> 0
           <AlertTriangle className="w-3 h-3" />0
         </span>
-
-        <span className="hover:bg-zinc-800 px-1 sm:hidden rounded cursor-pointer flex items-center gap-1">
-          <Clock className="w-3 h-3" />2 mins
-        </span>
-
         <span className="hover:bg-zinc-800 sm:hidden px-1 rounded cursor-pointer">
           [TypeScript Importer]:Symbols: 78
         </span>
@@ -82,21 +69,10 @@ export function StatusFooter() {
           TypeScript JSX
         </span>
 
-        <span className="hover:bg-zinc-800 sm:hidden px-1 rounded cursor-pointer flex items-center gap-1">
-          <BarChart3 className="w-3 h-3" />
-          Chat quota reached
-        </span>
-
         <span className="hover:bg-zinc-800 px-1 sm:hidden rounded cursor-pointer flex items-center gap-1">
           <RadioTower className="w-3 h-3" />
           Go Live
         </span>
-
-        <span className="hover:bg-zinc-800  sm:hidden px-1 rounded cursor-pointer flex items-center gap-1">
-          <Zap className="w-3 h-3" />
-          Quokka
-        </span>
-
         <span className="hover:bg-zinc-800 px-1 rounded cursor-pointer flex items-center gap-1">
           <Palette className="w-3 h-3" />
           Prettier
