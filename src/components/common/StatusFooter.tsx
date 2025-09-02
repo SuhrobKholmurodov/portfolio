@@ -49,14 +49,6 @@ export function StatusFooter() {
 
       <div className="flex items-center gap-4">
         <span className="hover:bg-zinc-800 sm:hidden px-1 rounded cursor-pointer">
-          Ln 17, Col 1
-        </span>
-
-        <span className="hover:bg-zinc-800 sm:hidden px-1 rounded cursor-pointer">
-          Spaces: 2
-        </span>
-
-        <span className="hover:bg-zinc-800 sm:hidden px-1 rounded cursor-pointer">
           UTF-8
         </span>
 
