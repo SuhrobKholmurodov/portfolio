@@ -1,4 +1,4 @@
-import { Github, Folders, Settings, User } from "lucide-react";
+import { Github, Folders, Settings, CircleUserRound } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useNavigate } from "react-router-dom";
 
@@ -8,8 +8,8 @@ const sidebarIcons = [
 ];
 
 const bottomIcons = [
+  { id: "profile", icon: <CircleUserRound size={24} />, label: "Profile" },
   { id: "settings", icon: <Settings size={24} />, label: "Settings" },
-  { id: "profile", icon: <User size={24} />, label: "Profile" },
 ];
 
 export function MainSidebar({
@@ -33,7 +33,7 @@ export function MainSidebar({
 
   return (
     <nav className="bg-zinc-900 border-r border-zinc-500 flex flex-col justify-between h-full items-center">
-      <div className="mt-2 flex flex-col items-center">
+      <div className="flex flex-col items-center">
         {sidebarIcons.map(({ id, icon, label }) => (
           <button
             key={id}
@@ -55,12 +55,12 @@ export function MainSidebar({
         ))}
       </div>
 
-      <div className="mb-2 flex flex-col items-center">
+      <div className=" flex flex-col items-center">
         {bottomIcons.map(({ id, icon, label }) => (
           <div
             key={id}
             aria-label={label}
-            className="mb-2 w-[45px] h-[50px] flex items-center justify-center rounded text-zinc-500 cursor-default relative"
+            className="w-[45px] h-[50px] flex items-center justify-center rounded text-zinc-500 cursor-default relative"
           >
             <span className="z-10 sm:text-lg">{icon}</span>
           </div>
