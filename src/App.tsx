@@ -18,6 +18,7 @@ import Projects from "@/pages/Projects";
 import About from "@/pages/About";
 import { Github } from "./pages/Github";
 import { FileExplorer } from "@/components/common/FileExplorer";
+import Cat from "./pages/Cat";
 
 const filePages = [
   { id: "home", label: "Home.tsx", path: "/explore/home", component: Home },
@@ -157,19 +158,7 @@ function VSCodeLayout() {
               <Route path="/explore/about" element={<About />} />
               <Route path="/explore/contact" element={<Contact />} />
               <Route path="/explore/projects" element={<Projects />} />
-              <Route
-                path="/cat/:id"
-                element={
-                  <div className="p-4">
-                    <p>This is a cat text</p>
-                    <img
-                      src={`https://cataas.com/cat?${Math.random()}`}
-                      alt="cat"
-                      className="max-w-full h-auto"
-                    />
-                  </div>
-                }
-              />
+              <Route path="/cat/:id" element={<Cat />} />
             </Routes>
           </div>
         </div>

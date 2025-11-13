@@ -1,4 +1,4 @@
-import { X } from "lucide-react";
+import { File, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import ReactIcon from "../../assets/react.svg";
@@ -48,7 +48,17 @@ export function FileTabs({
           {activePath === file.path && (
             <div className="absolute top-0 left-0 right-0 h-0.5 bg-blue-500" />
           )}
-          <img src={ReactIcon} alt="React" className="w-4 h-4 flex-shrink-0" />
+
+          {file.path.startsWith("/cat/") ? (
+            <File className="w-4 h-4 flex-shrink-0 text-gray-400" />
+          ) : (
+            <img
+              src={ReactIcon}
+              alt="React"
+              className="w-4 h-4 flex-shrink-0"
+            />
+          )}
+
           <span className="truncate max-w-[80px] sm:max-w-none">
             {file.label}
           </span>
