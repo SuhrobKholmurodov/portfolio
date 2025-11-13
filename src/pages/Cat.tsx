@@ -1,33 +1,18 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useGetCatsQuery } from "@/api/giphy";
 
 export default function Cat() {
   const { id } = useParams();
+  const { data: gifs } = useGetCatsQuery(50);
   const [gifUrl, setGifUrl] = useState<string>("");
 
   useEffect(() => {
-    async function fetchGif() {
-      try {
-        const search = "cat";
-        const key = "VHVLGLNA2hlgRyYY1MaxMFXTuS3Lus38";
-        const limit = 50;
-
-        const response = await fetch(
-          `https://api.giphy.com/v1/gifs/search?q=${search}&api_key=${key}&limit=${limit}`
-        );
-        const data = await response.json();
-        const gifs = data.data;
-        if (gifs.length > 0) {
-          const randomGif = gifs[Math.floor(Math.random() * gifs.length)];
-          setGifUrl(randomGif.images.downsized.url);
-        }
-      } catch (err) {
-        console.error(err);
-      }
+    if (gifs && gifs.length > 0) {
+      const randomGif = gifs[Math.floor(Math.random() * gifs.length)];
+      setGifUrl(randomGif.images.downsized.url);
     }
-
-    fetchGif();
-  }, [id]);
+  }, [gifs, id]);
 
   return (
     <div className="h-full flex flex-col px-4 sm:pt-[80px] bg-zinc-950 items-center justify-center">

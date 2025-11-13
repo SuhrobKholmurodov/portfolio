@@ -1,4 +1,4 @@
-import { useGetUserQuery } from "@/api";
+import { useGetUserQuery } from "@/api/github";
 import {
   BookMarked,
   Github as GithubIcon,
