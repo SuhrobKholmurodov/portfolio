@@ -67,7 +67,7 @@ function VSCodeLayout() {
     const id = Date.now().toString();
     const newFile: FileTab = {
       id,
-      label: "Cat.txt",
+      label: "This is a cat",
       path: `/cat/${id}`,
     };
     setCatFiles((prev) => [...prev, newFile]);
