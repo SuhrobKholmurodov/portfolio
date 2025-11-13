@@ -76,7 +76,8 @@ function VSCodeLayout() {
 
   useEffect(() => {
     if (
-      location.pathname.startsWith("/explore") &&
+      (location.pathname.startsWith("/explore") ||
+        location.pathname.startsWith("/cat")) &&
       !openTabs.includes(location.pathname)
     ) {
       const newTabs = [location.pathname, ...openTabs];
