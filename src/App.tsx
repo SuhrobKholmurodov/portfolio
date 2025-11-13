@@ -36,6 +36,12 @@ const filePages = [
   },
 ];
 
+type FileTab = {
+  id: string;
+  label: string;
+  path: string;
+};
+
 function VSCodeLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
@@ -46,6 +52,26 @@ function VSCodeLayout() {
     if (saved) return JSON.parse(saved) as string[];
     return location.pathname.startsWith("/explore") ? [location.pathname] : [];
   });
+
+  const [catFiles, setCatFiles] = useState<FileTab[]>([]);
+
+  const tabData = [
+    ...(openTabs
+      .map((path) => filePages.find((f) => f.path === path))
+      .filter(Boolean) as (typeof filePages)[0][]),
+    ...catFiles,
+  ];
+
+  function createCatFile() {
+    const id = Date.now().toString();
+    const newFile: FileTab = {
+      id,
+      label: "Cat.txt",
+      path: `/cat/${id}`,
+    };
+    setCatFiles((prev) => [...prev, newFile]);
+    navigate(newFile.path);
+  }
 
   useEffect(() => {
     if (
@@ -74,10 +100,6 @@ function VSCodeLayout() {
       return newTabs;
     });
   };
-
-  const tabData = openTabs
-    .map((path) => filePages.find((f) => f.path === path))
-    .filter(Boolean) as (typeof filePages)[0][];
 
   const [activeSection, setActiveSection] = useState(() =>
     location.pathname.startsWith("/github") ? "github" : "explorer"
@@ -121,7 +143,10 @@ function VSCodeLayout() {
               tabs={tabData}
               activePath={location.pathname}
               setActivePath={navigate}
-              onCloseTab={handleCloseTab}
+              onCloseTab={(path) => {
+                handleCloseTab(path);
+                setCatFiles((prev) => prev.filter((f) => f.path !== path));
+              }}
             />
           </div>
           <div className="flex-1 min-h-0 overflow-auto bg-background">
@@ -132,11 +157,24 @@ function VSCodeLayout() {
               <Route path="/explore/about" element={<About />} />
               <Route path="/explore/contact" element={<Contact />} />
               <Route path="/explore/projects" element={<Projects />} />
+              <Route
+                path="/cat/:id"
+                element={
+                  <div className="p-4">
+                    <p>This is a cat text</p>
+                    <img
+                      src={`https://cataas.com/cat?${Math.random()}`}
+                      alt="cat"
+                      className="max-w-full h-auto"
+                    />
+                  </div>
+                }
+              />
             </Routes>
           </div>
         </div>
       </div>
-      <StatusFooter />
+      <StatusFooter onCreateCat={createCatFile} />
     </div>
   );
 }

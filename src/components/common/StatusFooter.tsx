@@ -11,15 +11,17 @@ import {
   RadioTower,
   BellDot,
   ChevronsRightLeft,
+  MessageSquare,
 } from "lucide-react";
 
-export function StatusFooter() {
+export function StatusFooter({ onCreateCat }: { onCreateCat?: () => void }) {
   return (
     <footer className="bg-zinc-900 h-6 border-t border-zinc-800 text-xs text-zinc-400 flex items-center justify-between pr-3 font-mono">
       <div className="flex items-center gap-2">
         <div className="bg-blue-500 sm:hidden h-5 w-6 flex items-center justify-center">
           <ChevronsRightLeft size={18} className="text-white" />
         </div>
+
         <div className="flex items-center gap-1 hover:bg-zinc-800 px-1 rounded cursor-pointer">
           <GitBranch className="w-3 h-3" />
           <span>master*</span>
@@ -31,14 +33,24 @@ export function StatusFooter() {
         <div className="flex items-center gap-3 hover:bg-zinc-800 px-1 rounded cursor-pointer">
           <GitGraph className="w-3 h-3" />
         </div>
+
         <div className="flex items-center gap-3 hover:bg-zinc-800 px-1 rounded cursor-pointer">
           <Rocket className="w-3 h-3" />
+        </div>
+
+        <div
+          onClick={onCreateCat}
+          className="flex items-center gap-1 hover:bg-zinc-800 px-1 rounded cursor-pointer"
+        >
+          <MessageSquare className="w-3 h-3" />
+          <span>Hey Cat!!</span>
         </div>
 
         <span className="hover:bg-zinc-800 px-1 rounded cursor-pointer flex items-center gap-1">
           <CircleX className="w-3 h-3" /> 0
           <AlertTriangle className="w-3 h-3" />0
         </span>
+
         <span className="hover:bg-zinc-800 sm:hidden px-1 rounded cursor-pointer">
           [TypeScript Importer]:Symbols: 78
         </span>
@@ -65,6 +77,7 @@ export function StatusFooter() {
           <RadioTower className="w-3 h-3" />
           Go Live
         </span>
+
         <span className="hover:bg-zinc-800 px-1 rounded cursor-pointer flex items-center gap-1">
           <Palette className="w-3 h-3" />
           Prettier
