@@ -3,10 +3,17 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import ReactIcon from "../../assets/react.svg";
 
-type FileTab = {
+export type FileTab = {
   id: string;
   label: string;
   path: string;
+};
+
+type FileTabsProps = {
+  tabs: FileTab[];
+  activePath: string;
+  setActivePath: (path: string) => void;
+  onCloseTab: (path: string) => void;
 };
 
 export function FileTabs({
@@ -14,12 +21,7 @@ export function FileTabs({
   activePath,
   setActivePath,
   onCloseTab,
-}: {
-  tabs: FileTab[];
-  activePath: string;
-  setActivePath: (id: string) => void;
-  onCloseTab: (id: string) => void;
-}) {
+}: FileTabsProps) {
   return (
     <div className="bg-zinc-900 flex w-max sm:w-full items-center h-auto overflow-x-auto scrollbar-hide">
       <style>

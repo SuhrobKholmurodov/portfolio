@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   ChevronDown,
   ChevronRight,
@@ -92,7 +91,7 @@ export function FileExplorer({
           </div>
           {open && (
             <div>
-              {treeData[0].children.map((file: any) => (
+              {treeData[0].children.map((file) => (
                 <button
                   key={file.id}
                   type="button"
