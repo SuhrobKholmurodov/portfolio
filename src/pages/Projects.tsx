@@ -47,6 +47,13 @@ export default function Projects() {
       code: "https://github.com/SuhrobKholmurodov/filesharing-app",
       live: "https://react-filesharing-app.vercel.app/",
     },
+    {
+      name: "Portfolio",
+      description:
+        "VSCode Portfolio - A developer portfolio built to look and feel like Visual Studio Code",
+      code: "https://github.com/suhrobkholmurodov/portfolio",
+      live: "https://suhrobdev.vercel.app/",
+    },
   ];
 
   const [visible, setVisible] = useState(false);

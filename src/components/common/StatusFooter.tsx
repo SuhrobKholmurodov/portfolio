@@ -13,6 +13,11 @@ import {
   ChevronsRightLeft,
   MessageSquare,
 } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export function StatusFooter({ onCreateCat }: { onCreateCat?: () => void }) {
   return (
@@ -38,13 +43,18 @@ export function StatusFooter({ onCreateCat }: { onCreateCat?: () => void }) {
           <Rocket className="w-3 h-3" />
         </div>
 
-        <div
-          onClick={onCreateCat}
-          className="flex items-center gap-1 hover:bg-zinc-800 px-1 rounded cursor-pointer"
-        >
-          <MessageSquare className="w-3 h-3" />
-          <span>Hey Cat!!</span>
-        </div>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <div
+              onClick={onCreateCat}
+              className="flex items-center gap-1 hover:bg-zinc-800 px-1 rounded cursor-pointer"
+            >
+              <MessageSquare className="w-3 h-3" />
+              <span>Hey Cat!! </span>
+            </div>
+          </TooltipTrigger>
+          <TooltipContent side="top">Click to see kitty</TooltipContent>
+        </Tooltip>
 
         <span className="hover:bg-zinc-800 px-1 rounded cursor-pointer flex items-center gap-1">
           <CircleX className="w-3 h-3" /> 0
@@ -78,7 +88,7 @@ export function StatusFooter({ onCreateCat }: { onCreateCat?: () => void }) {
           Go Live
         </span>
 
-        <span className="hover:bg-zinc-800 px-1 rounded cursor-pointer flex items-center gap-1">
+        <span className="hover:bg-zinc-800 sm:hidden px-1 rounded cursor-pointer flex items-center gap-1">
           <Palette className="w-3 h-3" />
           Prettier
         </span>

@@ -1,5 +1,6 @@
 import { Home, Folder, Mail, ExternalLink, User } from "lucide-react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 const links = [
   {
@@ -56,12 +57,14 @@ export default function Welcome() {
       <Helmet>
         <title>Welcome | Suhrob Kholmurodov</title>
       </Helmet>
+
       <div className="text-center mb-4 sm:mt-10">
         <div className="flex items-center justify-center gap-3 mb-4">
           <div className="w-3 h-3 bg-red-500 rounded-full"></div>
           <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
           <div className="w-3 h-3 bg-green-500 rounded-full"></div>
         </div>
+
         <h1 className="text-3xl font-bold text-zinc-100 mb-2 tracking-tight bg-gradient-to-r from-zinc-100 to-zinc-300 bg-clip-text text-transparent">
           Suhrob Kholmurodov
         </h1>
@@ -72,9 +75,9 @@ export default function Welcome() {
 
       <div className="w-full max-w-3xl grid grid-cols-2 sm:grid-cols-1 gap-4 mb-40">
         {links.map((link) => (
-          <a
+          <Link
             key={link.label}
-            href={baseUrl + link.href}
+            to={baseUrl + link.href}
             className={`flex items-center gap-4 bg-zinc-900/80 border border-zinc-800 px-5 py-4 
               rounded-xl transition-all duration-300 group hover:scale-[1.02] backdrop-blur-sm 
               ${link.theme.border}`}
@@ -84,16 +87,19 @@ export default function Welcome() {
             >
               {link.icon}
             </div>
+
             <div className="flex-1">
               <div className="text-zinc-200 font-semibold">{link.label}</div>
               <div className="text-zinc-500 text-sm mt-1">{link.desc}</div>
             </div>
+
             <ExternalLink
               size={18}
               className={`text-zinc-600 transition-colors ${link.theme.icon}`}
             />
-          </a>
+          </Link>
         ))}
+
         <div className="text-xs hidden sm:block text-zinc-600 text-center font-mono">
           © {new Date().getFullYear()} Suhrob Kholmurodov
         </div>

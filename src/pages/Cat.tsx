@@ -20,7 +20,7 @@ export default function Cat() {
         <img
           src={gifUrl}
           alt="cat gif"
-          className="max-w-[500px] max-h-[500px] w-auto h-auto rounded shadow-lg"
+          className="max-w-[500px] sm:max-w-[300px] max-h-[500px] w-auto h-auto rounded shadow-lg"
         />
       ) : (
         <div className="flex flex-col items-center gap-4">
